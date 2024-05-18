@@ -10,13 +10,13 @@ if ($testResult -like '*Passed*') {
 
     #build docker image
     Write-Host "Building docker image"
-    $dockerBuildResult = podman build -t super-service:v1.6 .
+    $dockerBuildResult = podman build -t super-service:v1.7 .
 
     #check if docker build succeeded
     if ($dockerBuildResult -like '*Successfully*'){
         Write-Host "Docker image built successfully. Proceeding to run container"
 
-        podman run -d -p 8081:80 --name super-service-app localhost/super-service:v1.6
+        podman run -d -p 8080:80 localhost/super-service:v1.7
 
 
         # For example, deploying to Azure Container Registry and Azure App Service

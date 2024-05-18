@@ -15,15 +15,18 @@ Instructions:
 
 B. Kubernetes Cluster
 1. Hosting Provider
+
 The deployment will be on Microsoft Azure, using Azure Kubernetes Service (AKS) for the Kubernetes cluster.
 
 2. Cluster Configuration
+
 Azure Kubernetes Service (AKS)
 Resource Group: Create a resource group for organizing all resources.
 AKS Cluster: Deploy an AKS cluster within this resource group. Ensure that it is set up with multiple nodes across different availability zones for high availability.
 Node Pools: Use node pools to separate workloads if needed, such as for frontend services, backend services, and database services.
 
 3. Networking
+
 Public Web Services
 Azure Load Balancer: Use an Azure Load Balancer to expose the Kubernetes services to the internet. This will distribute incoming traffic across the nodes in the AKS cluster.
 Ingress Controller: Deploy an NGINX Ingress Controller in the AKS cluster to manage incoming HTTP/HTTPS traffic and route it to the appropriate services.
@@ -35,11 +38,13 @@ Private Link/Endpoints: Use Azure Private Link to create private endpoints for t
 
 
 4. Monitoring and Notifications
+
 Azure Monitor: Use Azure Monitor and Azure Log Analytics to collect and analyze logs and metrics from the AKS cluster.
 Azure Alerts: Set up alerts in Azure Monitor to notify the support team if there are connectivity issues between the web services and the internal systems. Alerts can be configured to send notifications via email, SMS, or integration with incident management tools like PagerDuty or Slack.
 
 
 5. Automated Deployments
+
 Azure DevOps: Use Azure DevOps for CI/CD pipelines. Set up pipelines to automate the build, test, and deployment processes for the web services.
 GitOps: Implement GitOps practices using tools like Github Actions or Azure DevOps Pipelines to automate deployments based on changes in the Git repository.
 
