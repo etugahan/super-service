@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:8.0-focal AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 COPY ./src/*.csproj ./
@@ -12,10 +12,10 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 
 # Update the package manager and install security updates
-RUN apt-get update \
-    && apt-get upgrade -y \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+# RUN apt-get update \
+#     && apt-get upgrade -y \
+#     && apt-get clean \
+#     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=build /app/out ./
 
