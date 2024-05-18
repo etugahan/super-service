@@ -17,6 +17,14 @@ if ($testResult -like '*Passed*') {
         Write-Host "Docker image built successfully. Proceeding to run container"
 
         podman run -d -p 8081:80 --name super-service-app localhost/super-service:v1.6
+
+
+        # For example, deploying to Azure Container Registry and Azure App Service
+        # az acr login --name your-acr-name
+        # docker tag your-web-api-image your-acr-name.azurecr.io/your-web-api-image:latest
+        # docker push your-acr-name.azurecr.io/your-web-api-image:latest
+        # az webapp config container set --name your-web-app-name --resource-group your-resource-group --docker-custom-image-name your-acr-name.azurecr.io/your-web-api-image:latest --docker-registry-server-url https://your-acr-name.azurecr.io
+    
     }else {
         Write-Host "Docker image build failed. Aborting deployment"
         exit 1
