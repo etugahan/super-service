@@ -43,6 +43,6 @@ Azure Alerts: Set up alerts in Azure Monitor to notify the support team if there
 Azure DevOps: Use Azure DevOps for CI/CD pipelines. Set up pipelines to automate the build, test, and deployment processes for the web services.
 GitOps: Implement GitOps practices using tools like Github Actions or Azure DevOps Pipelines to automate deployments based on changes in the Git repository.
 
-![alt text](<CICD with Monitoring.jpg>)
+![alt text](<CICD with Monitoring.png>)
 
 ![alt text](<CICD Diagram-Backend.jpg>)
