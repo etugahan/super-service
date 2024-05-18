@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:6.0-focal AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0-focal AS build
 WORKDIR /src
 
 COPY ./src/*.csproj ./
@@ -7,7 +7,7 @@ RUN dotnet restore
 COPY ./src/. ./
 RUN dotnet publish -c Release -o /app/out
 
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 
 WORKDIR /app
 
