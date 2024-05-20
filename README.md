@@ -10,6 +10,7 @@ Instructions:
    - If the test is successful, the script will build the application into a docker image.
    - If the build is successful, the script will deploy the containerized application locally. Else it will exit.
    - Sample commands are included in the script to deploy in the cloud if connection to the cloud resources such as Azure Container Registry and Azure App Services is available.
+   - NOTE: Updated the .Net Framework version to net8.0
 
 
 
